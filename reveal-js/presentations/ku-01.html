@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>OOP1 KU 16-03-2021</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+
+				<section>
+					<h2>Heute</h2>
+
+					
+					<ul>
+					<li>Wiederholung - Klassen  <span  style="font-size:12pt; margin-left:10px">15min</span></li>
+					<li>Clion   <span  style="font-size:12pt; margin-left:10px">5min</span></li>
+					<li>Menti Fragen   <span  style="font-size:12pt; margin-left:10px">10min</span></li>
+					<li>Datentyp der Woche - Vector   <span  style="font-size:12pt; margin-left:10px">15min</span></li>
+					<li>Menti Fragen <span  style="font-size:12pt; margin-left:10px">end</span></li>
+					</ul>
+
+
+				</section>
+				<section>
+					<h2>Klassen</h2>
+				</section>
+				<section>
+					<h2>Clion</h2>
+				</section>
+				<section>
+					<h2>Menti Fragen</h2>
+				</section>
+				<section>
+
+					<section>
+						<h2>Datentyp der Woche</h2>
+						<p><a href="https://www.cplusplus.com/reference/vector/vector/" target="_new">Vector - std::vector</a></p>
+						<p>&nbsp;</p>
+
+						<ul>
+							<li>push_back()</li>
+							<li>at()</li>
+							<li>pop_back()</li>
+							<li>clear()</li>
+							<li>emtpy()</li>
+							<li>size()</li>
+							<li><span style="font-size: 16pt;"> erase() </span> </li>
+						</ul>
+					</section>
+					<section>
+						<section data-markdown>
+							<script type="text/template">
+								```c++ [1-2|4-5|7|9|11|13-14|16]
+								// erstellt einen vector am stack
+								std::vector<int> myvector; 
+
+								// fügt 42 als letztes element ein
+								myvector.push_back(42); 
+
+								myvector.at(0); // zugriff auf element an der stelle 0
+								
+								myvector.pop_back(); // entfernt das letzte element
+
+								myvector.clear(); // entfernt alle elemente
+
+								// return bool: true wenn vector leer, sonst false
+								myvector.empty(); 
+
+								myvector.size(); // gibt die größe des Vectors zurück
+
+								// löscht element mittels iterator
+								myvector.erase(myvector.begin()); 
+								```
+							</script>
+						</section>
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Zusammenfassung</h2>
+					<p>Wiederholungsbeispiel</p>
+					<p>Clion</p>
+					<p>Datentyp der Woche</p>
+				</section>
+
+				<section>
+					<h2>Menti Fragen</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+
+			Reveal.toggleOverview();
+
+		</script>
+	</body>
+</html>
