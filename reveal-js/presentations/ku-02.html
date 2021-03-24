@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>OOP1 KU 24-03-2021</title>
+
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<h1 id="headline">OOP1</h1>
+					<h1>KU</h1>
+					<h1>24-03-2021</h1>
+
+				</section>
+
+				<section>
+					<h2 id="headline">Heute</h2>
+
+					<ul>
+						<li class="agenda-list">Organisatorisches</li>
+						<li class="agenda-list">static Beispiel<span  class="time">10min</span></li>
+						<li class="agenda-list">Datenstruktur der Woche - Stack und Queue   <span  class="time">10min</span></li>
+						<li class="agenda-list">Menti Fragen   <span  class="time">10min</span></li>
+						<li class="agenda-list">(Tom's Array)++<span  class="time">25min</span></li>
+						<ul style="font-size: 18pt;">
+							<li>Klassenaufteilung</li>
+							<li>Deep Copy</li>
+						</ul>
+						<li class="agenda-list">Menti Fragen <span  class="time">end</span></li>
+					</ul>
+
+				</section>
+				<section>
+					<h2 id="headline">Organisatorisches zu Assignment 1</h2>
+					<ul>
+						<li>Ausgabe morgen um 17:00 nach dem VO Stream</li>
+						<li>KU-Fragestunde: 31.3.2021</li>
+						<li class="red">Deadline:  7.4.2021 </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 id="headline">static Beispiel</h2>
+				</section>
+
+				<section>
+					<h2 id="headline">Datenstruktur der Woche</h2>
+					<p><a href="https://www.cplusplus.com/reference/stack/stack/" target="_new">Stack - std::stack</a></p>
+					<p><a href="https://www.cplusplus.com/reference/queue/queue/" target="_new">Queue - std::queue</a></p>
+					
+					<img src="assets/array.jpg">
+					<p></p>
+					<ul>
+						<li>emtpy()</li>
+						<li>size()</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2 id="headline">Stack - std::stack</h2>
+						<p>LIFO - last in first out</p>
+						<ul>
+							<li>top()</li>
+							<li>pop()</li>
+							<li>push()</li>
+						</ul>
+						<p></p>
+						<img src="assets/stack.png">
+					</section>
+
+					<section>
+						<h2 id="headline">Stack - std::stack</h2>
+						<section data-markdown>
+							<script type="text/template">
+								```c++ [1|3|5-6|8]
+								std::stack<int> mystack; // erstellt einen stack
+
+								mystack.push(42);  // fügt 42 am top of stack ein
+
+								// zugriff auf das oberste element
+								int number = myvector.top(); // 42
+
+								myvector.pop(); // entfernt das oberste element
+								```
+							</script>
+						</section>
+						<img src="assets/stack.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2 id="headline">Queue - std::queue</h2>
+						<p>FIFO - first in first out</p>
+						<ul>
+							<li>front()</li>
+							<li>back()</li>
+							<li>pop()</li>
+							<li>push()</li>
+						</ul>
+						<p></p>
+						<img src="assets/queue.png">
+					</section>
+
+					<section>
+						<h2 id="headline">Queue - std::queue</h2>
+						<section data-markdown>
+							<script type="text/template">
+								```c++ [1|3-5|7-9|11]
+								std::queue<int> myqueue; // erstellt eine queue
+	
+								// fügt 42,73 am hinten in die queue ein (enqueue)
+								myqueue.push(42);  
+								myqueue.push(73);
+	
+								// zugriff auf das erste/letzte element der queue
+								int front = myqueue.front(); // 42
+								int back = myqueue.back(); // 73
+	
+								myqueue.pop(); // entfernt das erste element (dequeue)
+								```
+							</script>
+						</section>
+						<p></p>
+						<img src="assets/queue.png">
+					</section>
+
+
+					<section>
+						<img src="assets/stack_queue.png">
+						<p class="time">Für Assingment 1 sehr hilfreich</p>
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2 id="headline">Menti Fragen</h2>
+				</section>
+				
+				<section>
+					<h2 id="headline">(Tom's Array)++</h2>
+				</section>
+
+
+				<section>
+					<h2 id="headline">Zusammenfassung</h2>
+					<ul>
+						<li class="agenda-list">static Beispiel</li>
+						<ul style="font-size: 18pt;">
+							<li>static in cpp initialisieren</li>
+							<li>inline</li>
+						</ul>
+						<li class="agenda-list">Datenstruktur der Woche - Stack und Queue</li>
+						<li class="agenda-list">(Tom's Array)++</li>
+						<ul style="font-size: 18pt;">
+							<li>Klassenaufteilung</li>
+							<li>Deep Copy</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2 id="headline">Menti Fragen</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+
+			Reveal.toggleOverview();
+
+		</script>
+
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+
+
+		</script>
+	</body>
+</html>

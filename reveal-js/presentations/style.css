@@ -1,0 +1,22 @@
+
+
+#headline {
+    color: rgb(226, 71, 71);
+}
+
+
+
+.agenda-list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.time {
+    color: rgb(226, 71, 71);
+    font-size:12pt;
+    margin-left:10px
+}
+
+.red {
+    color: rgb(255, 0, 0);
+}
