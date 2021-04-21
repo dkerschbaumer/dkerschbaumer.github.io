@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>OOP1 KU 21-04-2021</title>
+
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<h1 id="mainheadline">OOP1</h1>
+					<h1>KU</h1>
+					<h1>21-04-2021</h1>
+
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Heute</h2>
+
+					<ul>
+						<li class="agenda-list">Organisatorisches</li>
+						<li class="agenda-list">Singleton Beispiel<span  class="time">10min</span></li>
+						<li class="agenda-list">Datenstruktur der Woche - Map (and Multimap)   <span  class="time">5min</span></li>
+						<li class="agenda-list">File einlesen - map - rapidjson ausgeben   <span  class="time">30min</span></li>
+						<li class="agenda-list">Menti Fragen <span  class="time">end</span></li>
+					</ul>
+
+				</section>
+				<section data-background-color="#000033">
+					<h2 id="headline">Organisatorisches</h2>
+					<ul>
+						<li>Milestone 1</li>
+						<ul>
+							<li class="orange">ausgegeben</li>
+							<li>28.4.2021 KU-Fragestunde</li>
+							<li class="red">8.5.2021 (soft) Deadline</li>
+							<li>10.5. - 14.5.2021 Feedbackgespräche</li>
+						</ul>
+						<li>Milestone 2</li>
+						<ul>
+							<li class="orange">22.4.2021 Morgen (nach VO-Stream)</li>
+							<li>19.5.2021 KU-Fragestunde</li>
+							<li class="red">29.5.2021 Deadline</li>
+							<li>31.5. - 11.6.2021 Abgabegespräche</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section data-background-color="#002633">
+					<h2 id="headline">Singleton Beispiel</h2>
+				</section>
+
+				<section  data-background-color="#4d0000">
+
+					<section>
+						<h2 id="headline">Datenstruktur der Woche</h2>
+						<p><a href="https://www.cplusplus.com/reference/map/map/" target="_new">Map - std::map (std::multimap)</a></p>
+						<p class="small-link">https://www.cplusplus.com/reference/map/map/  &nbsp; &nbsp; http://www.cplusplus.com/reference/map/multimap/</p>
+						<ul>
+							<li>Key - Value Pairs</li>
+							<li>Ein Schlüssel (key) verweist auf einen bestimmten Wert (value)</li>
+						</ul>
+						<img src="assets/map.png">
+					</section>
+
+					<section>
+						<h3 id="headline">std::map braucht std::pair</h3>
+						<p class="small-link">https://www.cplusplus.com/reference/utility/pair/pair/</p>
+						<ul>
+							<li>std::pair ist wie ein struct aus 2 Variablen</li>
+							<li>Die Datentypen können unterschiedlich sein</li>
+							<li>Wir wollen festlegen, dass es im Jänner durchschnittlich 3.55 Grad hat</li>
+						</ul>
+							<div class="r-stretch">
+								<div>
+								<pre><code class="cpp" data-trim data-noescape data-line-numbers="1-3|5-7">
+									<script type="text/template">
+										// erstellt ein pair
+										//        type of 1st, type of 2nd
+										std::pair<std::string, double> mypair("January", 3.55);
+
+										// Zugriff
+										std::cout << mypair.first << std::endl; // "January"
+										std::cout << mypair.second << std::endl; // 3.55
+									</script>
+								</code></pre>
+								</div>
+							</div>
+					</section>
+
+				
+					<section> <!-- START CODING SECTION -->
+						<div class="r-stretch">
+							<h2 id="headline">Map - std::map</h2>
+							<div>
+							<pre><code class="cpp" data-trim data-noescape data-line-numbers="1-3|5-6|8-9|10-11|13-15|17-18|20-21">
+								<script type="text/template">
+									//       KEY          VALUE
+									//       month        ∅ temperature
+									std::map<std::string, double> mymap; // erstellt eine map
+
+									// Element in die Map einfügen
+									mymap.insert(std::pair<std::string, double>("January", 3.55));
+
+									// Finde ein Element mithilfe des Keys - aber sehr lang :(
+									std::map<std::string,double>::iterator it=mymap.find("January");
+
+									auto it = mymap.find("January"); // verwende auto alternativ
+
+									// zugriff auf den key und value
+									std::cout << it->first << std::endl; // "January"
+									std::cout << it->second << std::endl; // 3.55
+
+									mymap.erase(it); // löscht das Element aus map mittels iterator
+									mymap.erase("January"); // löscht das Element mittels key
+
+									mymap.empty(); // gibt true oder false zurück
+									mymap.clear(); // leer die map
+								</script>
+							</code></pre>
+							</div>
+						</div>
+					</section> <!-- END CODING SECTION -->
+				</section>
+
+				<section  data-background-color="#4d0000">
+					<h2 id="headline">File einlesen - map - rapidjson ausgeben</h2>
+				</section>
+
+				<section  data-background-color="#002633">
+					<h2 id="headline">Menti Fragen</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/zoom/zoom.js"></script>
+		<script>
+
+			Reveal.initialize({
+
+				showSlideNumber: 'print',
+				backgroundTransition: 'slide',
+
+				plugins: [ RevealZoom, RevealHighlight ]
+			});
+
+
+
+		</script>
+
+	</body>
+</html>

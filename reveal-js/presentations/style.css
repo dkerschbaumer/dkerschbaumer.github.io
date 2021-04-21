@@ -1,10 +1,17 @@
 
-
-#headline {
+#mainheadline {
     color: rgb(226, 71, 71);
 }
 
+#headline {
+    color: rgb(226, 71, 71);
+    background-color: rgba(0, 0, 0, 0.315);
+}
 
+.small-link {
+    font-size: 13pt;
+    color:lightblue;
+}
 
 .agenda-list {
     margin-top: 1rem;
@@ -19,4 +26,18 @@
 
 .red {
     color: rgb(255, 0, 0);
+}
+
+.orange {
+    color: orange;
+}
+
+.reveal pre {
+    width: 100%;
+    height: 100%;
+}
+
+.reveal pre code {
+    min-height: 100%;
+    max-height: 100%;
 }
