@@ -31,15 +31,24 @@
 
 					<ul>
 						<li class="agenda-list">Organisatorisches</li>
-						<li class="agenda-list">Singleton Beispiel<span  class="time">10min</span></li>
+						<li class="agenda-list">Singleton Beispiel<span  class="time">15min</span></li>
 						<li class="agenda-list">Datenstruktur der Woche - Map (and Multimap)   <span  class="time">5min</span></li>
 						<li class="agenda-list">File einlesen - map - rapidjson ausgeben   <span  class="time">30min</span></li>
 						<li class="agenda-list">Menti Fragen <span  class="time">end</span></li>
 					</ul>
 
 				</section>
+
 				<section data-background-color="#000033">
-					<h2 id="headline">Organisatorisches</h2>
+					<h2 id="headline">Organisatorisches A1</h2>
+					<ul>
+						<li>Samstag 24.4.2021 - 11 Uhr</li>
+						<li>A1 Lösung von Aleks</li>
+					</ul>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Organisatorisches A2</h2>
 					<ul>
 						<li>Milestone 1</li>
 						<ul>
@@ -62,7 +71,7 @@
 					<h2 id="headline">Singleton Beispiel</h2>
 				</section>
 
-				<section  data-background-color="#4d0000">
+				<section  data-background-color="#330000">
 
 					<section>
 						<h2 id="headline">Datenstruktur der Woche</h2>
@@ -127,12 +136,87 @@
 									mymap.erase("January"); // löscht das Element mittels key
 
 									mymap.empty(); // gibt true oder false zurück
-									mymap.clear(); // leer die map
+									mymap.clear(); // leert die map
 								</script>
 							</code></pre>
 							</div>
 						</div>
 					</section> <!-- END CODING SECTION -->
+
+					<section>
+						<h2>Und was ist jetzt die multimap?</h2>
+					</section>
+
+					<section> <!-- START CODING SECTION -->
+						<div class="r-stretch">
+							<h2 id="headline">Map vs. Multlimap</h2>
+							<div>
+							<pre><code class="cpp" data-trim data-noescape data-line-numbers="1-9">
+								<script type="text/template">
+									std::map<std::string, double> mymap;
+
+									mymap.insert(std::pair<std::string, double>("January", 3.55));
+									mymap.insert(std::pair<std::string, double>("January", 4.55));
+									mymap.insert(std::pair<std::string, double>("February", 8.02));
+
+									for(auto iterator : mymap) 
+									{
+									 std::cout << iterator.first <<" "<< iterator.second << std::endl;
+									}
+								</script>
+							</code></pre>
+							</div>
+
+							<div>
+								<pre><code class="cpp" data-trim data-noescape data-line-numbers="1-6">
+									<script type="text/template">
+									February 8.02
+									January 3.55
+									</script>
+								</code></pre>
+								</div>
+							<p>Map kann nur ein Element mit selbem Key speichern</p>
+						</div>
+
+					</section> <!-- END CODING SECTION -->
+
+					<section> <!-- START CODING SECTION -->
+						<div class="r-stretch">
+							<h2 id="headline">Map vs. Multlimap</h2>
+							<div>
+							<pre><code class="cpp" data-trim data-noescape data-line-numbers="1-9">
+								<script type="text/template">
+									std::multimap<std::string, double> mymap;
+
+									mymap.insert(std::pair<std::string, double>("January", 3.55));
+									mymap.insert(std::pair<std::string, double>("January", 4.55));
+									mymap.insert(std::pair<std::string, double>("February", 8.02));
+
+									for(auto iterator : mymap) 
+									{
+									 std::cout << iterator.first <<" "<< iterator.second << std::endl;
+									}
+								</script>
+							</code></pre>
+							</div>
+
+							<div>
+								<pre><code class="cpp" data-trim data-noescape data-line-numbers="1-6">
+									<script type="text/template">
+									February 8.02
+									January 3.55
+									January 4.55
+									</script>
+								</code></pre>
+								</div>
+							<p>Multimap kann mehrere Elemente mit selbem Key speichern</p>
+						</div>
+
+					</section> <!-- END CODING SECTION -->
+
+
+
+
 				</section>
 
 				<section  data-background-color="#4d0000">
