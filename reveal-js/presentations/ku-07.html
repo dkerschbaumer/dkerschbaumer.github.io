@@ -79,16 +79,32 @@
 				</section>
 
 
-				<section data-background-color="#000033">
+				<section data-background-color="#000033" >
 					<h2 id="headline">Wie gehts weiter?</h2>
-					<ul>
-						<li>if(A2 bestandene Testcases > 66.6% (>= 15 TC))<br/>
-							&nbsp; &nbsp;&nbsp;&nbsp;freiwillig A3<br/>
-						    else <br/>
-							&nbsp; &nbsp;&nbsp;&nbsp;freiwillige Ausbesserung A2</li>
-						<li>Bei einer Ausbesserung von A2 wird das AG erst nach der Ausbesserung stattfinden</li>
-						<li>Bonuspunkte (2 Punkte pro Bonus Testcase) zählen erst, wenn man in der KU positiv ist</li>
-					</ul>
+					<p>A1: 16 Punkte, A2: 64 Punkte, A3: 20 Punkte</p>
+					<div class="r-stretch" style="font-size:xxx-large;" >
+						<div>
+						<pre><code class="cpp" data-trim data-noescape data-line-numbers="">
+							<script type="text/template">
+								if(A2 bestandene Testcases > 66.6% (also >= 15 TC)) {
+									Abgabegespräch A2
+									freiwillig A3
+								} else {
+									freiwillige Ausbesserung A2 && kein A3 möglich
+									wenn ihr schon genug Punkte habt, keine Ausbesserung notwendig
+									if(Ausbesserung A2) {
+										Punkte von A2 werden bei der Ausbesserung ersetzt
+										AG erst nach Abgabe der Ausbesserung
+									}
+									else { // ihr seid zufrieden mit eurer A2 Leistung
+										Abgabegespräch A2
+									}
+								}
+							</script>
+						</code></pre>
+						</div>
+					</div>
+					<p class="fragment fade-up">Bonuspunkte (2 Punkte pro Bonus Testcase) zählen erst, wenn man in der KU positiv ist </p>
 				</section>
 
 				<section data-background-color="#005c99">
