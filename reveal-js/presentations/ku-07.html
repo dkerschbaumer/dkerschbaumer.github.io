@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>OOP1 KU 26-05-2021</title>
+
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<h1 id="mainheadline">OOP1</h1>
+					<h1>KU</h1>
+					<h1>26-05-2021</h1>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Heute</h2>
+					<ul>
+						<li class="agenda-list">Organisatorisches <span  class="time">5min</span</li>
+						<li class="agenda-list">Random Seed einstellen<span  class="time">5min</span></li>
+						<li class="agenda-list">Lamda-Funktionen<span  class="time">15min</span></li>
+						<li class="agenda-list">Bank Beispiel (Composition over inheritance) <span  class="time">30min</span></li>
+						<li class="agenda-list">Menti Fragen <span  class="time">end</span></li>
+					</ul>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Organisatorisches AGs</h2>
+					<ul>
+						<li class="red">29.5.2021 Deadline</li>
+						<li>31.5. - 11.6.2021 Abgabegespräche</li>
+						<li>Punkte beim Abgabegespräch bekanntgegeben</li>
+						<li>AG mit allen Teammitgliedern - ca 1h</li>
+						<img class="fragment fade-up" src="assets/oop-ag.png">
+					</ul>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Assignment 2 - 64 Punkte</h2>
+					<ul>
+						<li>44,8 Punkte Funktionalität (70%)</li>
+						<li>19,2 Punkte Coding Standard (30%)</li>
+					</ul>
+					<p class="fragment fade-up" style="position: absolute; top: 40%; left: 10%; right: 10%; z-index: 5; background-color: rgb(230, 233, 37); color: red;">
+						ACHTUNG: Punkteabzug beim AG noch möglich</p>
+					<div class="r-stretch">
+						<div>
+						<pre><code class="cpp" data-trim data-noescape data-line-numbers="">
+							<script type="text/template">
+								// 23 Testcases + 4 Bonus Testcases (2 Punkte pro Testcase)
+								int passed_testcases = getNrOfPassedTestcases(abgabe);
+								int functionality_points = (passed_testcases / 23) * 44.8;
+
+								cs_points = getCSPointsFromTutor() * 
+								            min(1, 4/3 * passed_testcases / 23)
+								int a2_points = functionality_points + cs_points;	
+							
+							</script>
+						</code></pre>
+						</div>
+					</div>
+					<p style="font-size:xx-large;">Beispiel: 50% der Testcases geschafft, 10 CS Punkte<br/>
+						min(1, 4/3 * 50%) = min(1, 2/3) = 2/3<br/>
+						cs_points = 10 * 2/3 = <strong>6.6 CS Punkte</strong><br/></p>
+
+					<p >Ab 75% geschaffter Testcases gibt es also keinen Abzug</p> 
+				</section>
+
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Wie gehts weiter?</h2>
+					<ul>
+						<li>if(A2 bestandene Testcases > 66.6% (>= 15 TC))<br/>
+							&nbsp; &nbsp;&nbsp;&nbsp;freiwillig A3<br/>
+						    else <br/>
+							&nbsp; &nbsp;&nbsp;&nbsp;freiwillige Ausbesserung A2</li>
+						<li>Bei einer Ausbesserung von A2 wird das "große" AG erst nach der Ausbesserung stattfinden</li>
+						<li>Bonuspunkte (2 Punkte pro Bonus Testcase) zählen erst, wenn man in der KU positiv ist</li>
+					</ul>
+				</section>
+
+				<section data-background-color="#005c99">
+					<h2 id="headline">Random Seed einstellen</h2>
+				</section>
+
+				<section  data-background-color="#0066ff">
+					<h2 id="headline">Lamda-Funktionen</h2>
+				</section>
+
+				<section  data-background-color="#4d0000">
+					<h2 id="headline">Bank Beispiel (Composition over inheritance)</h2>
+				</section>
+
+				<section  data-background-color="#002633">
+					<h2 id="headline">Menti Fragen</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/zoom/zoom.js"></script>
+		<script>
+
+			Reveal.initialize({
+
+				showSlideNumber: 'print',
+				backgroundTransition: 'slide',
+
+				plugins: [ RevealZoom, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
