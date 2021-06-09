@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>OOP1 KU 26-05-2021</title>
+
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<h1 id="mainheadline">OOP1</h1>
+					<h1>KU</h1>
+					<h1>09-06-2021</h1>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Heute</h2>
+					<ul>
+						<li class="agenda-list">Organisatorisches</li>
+						<li class="agenda-list">A3 Vorstellung</li>
+					</ul>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Organisatorisches</h2>
+					<ul>
+						<li>31.5. - 11.6.2021 Abgabegespräche A2</li>
+						<li>Jetzt habt ihr die Wahl aus:</li>
+						<ul>
+							<li>Ausbesserungsbeispiel</li>
+							<li>Assignment 3</li>
+							<li>Ende der KU mit den bisherigen Punkten von Assignment 1 und 2</li>
+						</ul>
+						<li>Es können nicht Ausbesserungsbeispiel UND Assignment 3 gewählt werden</li>
+					</ul>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Organisatorisches Ausbesserungsbeispiel</h2>
+					<ul>
+						<li>selbe Aufgabenstellung wie A2</li>
+						<li>A3 kann nicht gemacht werden</li>
+						<li>Punkte für A2 werden bei der Ausbesserung ersetzt</li>
+						<li class="red">Deadline 27.Juni um 23:59</li>
+						<li>Abgabe via Git-Repository am Branch <strong>ausbesserung</strong></li>
+					</ul>
+				</section>
+
+				<section data-background-color="#000033">
+					<h2 id="headline">Organisatorisches A3</h2>
+					<ul>
+						<li>Vorraussetzungen: >= 15 bestandenen Testcases A2</li>
+						<li>2 Teile:</li>
+						<ul>
+							<li>Path-Finding-Befehl (5 Punkte)</li>
+							<li>Künstliche Intelligenz (15 Punkte)</li>
+						</ul>
+						<li class="red">Deadline 27.Juni um 23:59</li>
+						<li>Abgabe via Git-Repository am Branch <strong>assignment3</strong></li>
+					</ul>
+				</section>
+
+				
+				<section  data-background-color="#005c99">
+					<h2 id="headline">A3</h2>
+				</section>
+
+				<section  data-background-color="#005c99">
+					<h2 id="headline">AI Grundlagen</h2>
+					<ul>
+						<li>Spielphasen: Schieben - Ziehen</li>
+						<li>Trivial: falls Weg existiert -> ziehe</li>
+						<li>Weniger trivial: füge Tile so ein, dass Weg existiert</br>
+						Möglichkeiten: <= (3 * 4) * 4 = 12</li>
+						<li>Was sonst?</li>
+					</ul>
+				</section>
+
+
+				<section  data-background-color="#005c99">
+					<h2 id="headline">AI Umsetzung </h2>
+					<ul>
+						<li>Simulation des Spielfelds</li>
+						<li>z.B. mittels Copy-Constructor</li>
+						<li>Deep-Copy / Speicher freigeben</li>
+						<li>bestehende Objekte/Methoden können verwendet werden</li>
+						<li>Hauptspiel darf *nicht* verändert werden</li>
+						<li>effizient?</li>
+					</ul>
+				</section>
+
+				<section  data-background-color="#005c99">
+					<h2 id="headline">AI Umsetzung 2.0</h2>
+					<ul>
+						<li>Simulation abgespeckter Version des Spielfelds</li>
+						<li>nur benötigte Infos werden verwendet</li>
+						<li>z.B. Spieler, Ziel, Wände der Tiles</br>
+							(ggf. andere Spieler, falls man gerne etwas verhindern möchte ^^)</li>
+						<li>effizienter durch Verwendung von Bits (ESPipes)</li>
+						<li>dadurch aber potenziell fehleranfällig</li>
+					</ul>
+				</section>
+
+				<section  data-background-color="#005c99">
+					<h2 id="headline">Struct mit Bits</h2>
+					<ul>
+						<li>Angenehmere Verwendung von Bits in C++</li>
+						<li>jedes Bit als Struct-Member</li>
+						<li>Methoden für Bit-Shifts (z.B. für rotate)</li>
+					</ul>
+					<div class="r-stretch">
+						<div>
+						<pre><code class="cpp" data-trim data-noescape data-line-numbers="">
+							<script type="text/template">
+								struct TileBits
+								{
+								  uint8_t top_ : 1;
+								  uint8_t botom_ : 1;
+								  uint8_t right_ : 1;
+								  uint8_t left_ : 1;
+								  // uint8_t unused_ : 2;
+								  uint8_t player_ : 1;
+								  uint8_t goal_ : 1;
+								} __attribute__((packed));
+							</script>
+						</code></pre>
+						</div>
+					</div>
+				</section>
+
+
+				<section  data-background-color="#005c99">
+					<h2 id="headline">AI - Bester Spielzug</h2>
+					<ul>
+						<li>Was ist der beste Spielzug?</li>
+						<ul>
+							<li>Beispiel: Distanz zum Schatz</li>
+							<li>Wirklich immer der beste?</li>
+							<li>Wände verhindern den direkten Weg...</li>
+						</ul>
+						<li>Anzahl der möglichen Spielzüge</li>
+						<ul>
+							<li>48 Einfügeoptionen * 49 Endposition</li>
+							<li>~2500 Spielzüge</li>
+							<li>aber nur begrenzte Zeit (3 Sekunden)</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section  data-background-color="#005c99">
+					<h2 id="headline">AI - Bewertung eines Spielzugs (Beispiel)</h2>
+					<ul>
+						<li>Funktion die jedem Spielzug einen Wert zuweist</li>
+						<ul>
+							<li>z.B. in [0, 1] (oder [0, 100])</li>
+							<li>1 := Feld des Schatzes</li>
+							<li>0 := Ungünstigste Position zum Schatz</li>
+							<li>Zug mit höchster Bewertung wird ausgeführt</li>
+						</ul>
+						<li>Ausführen des am besten bewerteten Spielzugs</li>
+					</ul>
+				</section>
+
+				<section  data-background-color="#005c99">
+					<h2 id="headline">AI - Tipps</h2>
+					<ul>
+						<li>Versuchen Probleme zu vermeiden</li>
+						<ul>
+							<li>nicht erlaubtes Schieben</li>
+							<li>nicht erlaubtes Ziehen</li>
+						</ul>
+						<li>Nicht in "Sackgasse" bleiben</li>
+						<ul>
+							<li>versuchen hinauszukommen</li>
+							<li>z.B. nach 2 oder 3 Runden</li>
+						</ul>
+						<li>Fallback-Möglichkeit</li>
+						<ul>
+							<li>falls kein passender Zug gefunden wird</li>
+						</ul>
+					</ul>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/zoom/zoom.js"></script>
+		<script>
+
+			Reveal.initialize({
+
+				showSlideNumber: 'print',
+				backgroundTransition: 'slide',
+
+				plugins: [ RevealZoom, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
