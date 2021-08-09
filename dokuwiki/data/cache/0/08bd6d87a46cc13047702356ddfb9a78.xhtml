@@ -1,0 +1,56 @@
+
+<h1 class="sectionedit1" id="git">Git</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Git&quot;,&quot;hid&quot;:&quot;git&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-19&quot;} -->
+<h2 class="sectionedit2" id="general">general</h2>
+<div class="level2">
+<pre class="code">git init // create git repo
+rm -rf .git // remove git connection
+
+git add .            // add all untrackted files 
+git commit -m &quot;message&quot;  // commit 
+git status                   // current status of tracked and untrackted files
+
+
+git reset --hard &lt;commitID&gt;  // reset to a specific commit
+git log --online             // short git history in cli
+git reflog                   // short git history log</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;general&quot;,&quot;hid&quot;:&quot;general&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;20-467&quot;} -->
+<h2 class="sectionedit3" id="branching">Branching</h2>
+<div class="level2">
+<pre class="code">git checkout &lt;feature&gt;        // change to feature branch
+git checkout -b &lt;new_branch&gt;  // create and branch and change to it
+git branch                    // see all local branches
+git branch -a                 // all remote branches 
+
+git diff &lt;branchA&gt; &lt;branchB&gt;  // see the difference of two branches</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Branching&quot;,&quot;hid&quot;:&quot;branching&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;468-809&quot;} -->
+<h2 class="sectionedit4" id="merge">Merge</h2>
+<div class="level2">
+<pre class="code">git merge &lt;feature&gt;  // merge the freature branch into the current branch</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Merge&quot;,&quot;hid&quot;:&quot;merge&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;810-909&quot;} -->
+<h2 class="sectionedit5" id="stash">stash</h2>
+<div class="level2">
+<pre class="code">git stash save --keep-index   // stash the current status
+git stash show                // look at all stashes
+git stash drop &lt;stash&gt;        // delete a stash</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;stash&quot;,&quot;hid&quot;:&quot;stash&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;910-1093&quot;} -->
+<h2 class="sectionedit6" id="remotes">Remotes</h2>
+<div class="level2">
+<pre class="code">git remote -v                // list all current remotes
+git remote add &lt;remote_name&gt; &lt;repo&gt;        // adding a repo as remote
+  e.g. git remote add upstream &lt;repo link&gt;  // adding the upstream
+git remote remove &lt;remote_name&gt;            // disconnect a remote</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Remotes&quot;,&quot;hid&quot;:&quot;remotes&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1094-&quot;} -->

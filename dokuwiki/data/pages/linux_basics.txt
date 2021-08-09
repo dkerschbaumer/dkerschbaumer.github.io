@@ -1,0 +1,12 @@
+====== LINUX ======
+
+
+===== basics =====
+
+  $PS1= '>'  // changes the terminal promt
+
+
+===== change Java version =====
+
+configure the java version. e.g. from java11 to java8
+  $ sudo update-alternatives --config java

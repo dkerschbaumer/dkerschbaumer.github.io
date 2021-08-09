@@ -1,0 +1,36 @@
+====== David's Wikipedia ======
+
+This page will help to access my own huge knowledge in a faster way.
+Through constant expansion, an own knowledge database is built up here.
+
+----
+
+===== General ====
+
+[[Linux Basics|Linux Basics]]
+
+===== Languages ====
+
+[[Python|Python]]
+
+[[Java|Java]]
+
+[[CSS|CSS]]
+
+[[JavaScript|JavaScript]]
+
+[[TypeScript|TypeScript]]
+
+[[Latex|Latex]]
+
+----
+===== Tools ====
+
+[[GIT|Git]]
+
+[[heaptrack|heaptrack]]
+===== Mathematics ====
+
+[[Lineare Algebra|Lineare Algebra/Matrizen]]
+
+[[Regengesetze|Rechengesetze]]

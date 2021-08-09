@@ -1,0 +1,15 @@
+====== Heaptrack ======
+
+INstall:
+  sudo apt-get install -y heaptrack
+  sudo apt-get install -y heaptrack-gui
+
+https://github.com/KDE/heaptrack
+
+===== Execute programm with heaptrack =====
+
+  heaptrack ./<executable> // this will create a zst file in the current folder
+  heaptrack --analyze "xxxx.zst" // analyze in terminal
+  heaptrack_gui "xxxxzst" // anaylse in gui
+
+  

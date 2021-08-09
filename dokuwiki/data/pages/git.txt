@@ -1,0 +1,39 @@
+====== Git ======
+
+===== general =====
+  git init // create git repo
+  rm -rf .git // remove git connection
+  
+  git add .            // add all untrackted files 
+  git commit -m "message"  // commit 
+  git status                   // current status of tracked and untrackted files
+  
+  
+  git reset --hard <commitID>  // reset to a specific commit
+  git log --online             // short git history in cli
+  git reflog                   // short git history log
+  
+===== Branching =====
+  git checkout <feature>        // change to feature branch
+  git checkout -b <new_branch>  // create and branch and change to it
+  git branch                    // see all local branches
+  git branch -a                 // all remote branches 
+  
+  git diff <branchA> <branchB>  // see the difference of two branches
+  
+===== Merge =====
+  git merge <feature>  // merge the freature branch into the current branch
+  
+  
+===== stash =====
+  git stash save --keep-index   // stash the current status
+  git stash show                // look at all stashes
+  git stash drop <stash>        // delete a stash
+
+===== Remotes =====
+
+  git remote -v                // list all current remotes
+  git remote add <remote_name> <repo>        // adding a repo as remote
+    e.g. git remote add upstream <repo link>  // adding the upstream
+  git remote remove <remote_name>            // disconnect a remote
+  

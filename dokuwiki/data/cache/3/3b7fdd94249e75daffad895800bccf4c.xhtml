@@ -1,0 +1,115 @@
+
+<h1 class="sectionedit1" id="pandas">pandas</h1>
+<div class="level1">
+
+<p>
+<a href="/dokuwiki/lib/exe/detail.php?id=pandas&amp;media=1_8f3tgexsmj3g4crkiy56-q.png" class="media" title="1_8f3tgexsmj3g4crkiy56-q.png"><img src="/dokuwiki/lib/exe/fetch.php?w=400&amp;tok=c08e84&amp;media=1_8f3tgexsmj3g4crkiy56-q.png" class="media" alt="" width="400" /></a>
+</p>
+
+</div>
+
+<h4 id="rows_cols">rows cols</h4>
+<div class="level4">
+<pre class="code">df.shape[0] # number of rows
+df.shape[1] # number of cols</pre>
+
+<p>
+<a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c" class="urlextern" title="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c" rel="nofollow">https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c</a>
+</p>
+
+</div>
+
+<h4 id="select_column_by_index_operator">select column  by index operator</h4>
+<div class="level4">
+<pre class="code">df[&#039;food&#039;] # one column
+df[[&#039;color&#039;, &#039;food&#039;, &#039;score&#039;]] # many columns, returns a dataframe</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;pandas&quot;,&quot;hid&quot;:&quot;pandas&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-370&quot;} -->
+<h3 class="sectionedit2" id="loc_vs_iloc">loc vs iloc</h3>
+<div class="level3">
+
+<p>
+loc uses location names like Niko, Aaron, age, …
+iloc uses index like 1,2,4, …
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;loc vs iloc&quot;,&quot;hid&quot;:&quot;loc_vs_iloc&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;371-478&quot;} -->
+<h3 class="sectionedit3" id="loc">loc</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="select_row_by_loc">select row  by loc</h4>
+<div class="level4">
+<pre class="code">df.loc[&#039;Niko&#039;]
+df.loc[[&#039;Niko&#039;, &#039;Penelope&#039;]]
+df.loc[&#039;Niko&#039;:&#039;Dean&#039;] # from to range including last value
+df.loc[:&#039;Aaron&#039;] # from to last</pre>
+
+</div>
+
+<h4 id="select_rows_and_cols_by_loc">select rows and cols by loc</h4>
+<div class="level4">
+<pre class="code">df.loc[[&#039;Dean&#039;, &#039;Cornelia&#039;], [&#039;age&#039;, &#039;state&#039;, &#039;score&#039;]]
+df.loc[&#039;Jane&#039;, &#039;age&#039;] # select single value
+df.loc[:, [&#039;food&#039;, &#039;color&#039;]]  # select all rows and some columns
+df.loc[[&#039;Penelope&#039;,&#039;Cornelia&#039;], :] # select all columns and some rows</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;loc&quot;,&quot;hid&quot;:&quot;loc&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;479-949&quot;} -->
+<h3 class="sectionedit4" id="iloc">iloc</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="select_rows">select rows</h4>
+<div class="level4">
+<pre class="code">df.iloc[3] # returns the 4th entry
+df.iloc[[5, 2, 4]]       # get some entries as dataframe with all features
+df.iloc[3:5] # range based rows
+df.iloc[3:] # from 4th to end rows</pre>
+
+</div>
+
+<h4 id="select_rows_and_cols_by_iloc">select rows and cols by iloc</h4>
+<div class="level4">
+<pre class="code">df.iloc[[rows],[cols]]
+df.iloc[[2,3], [0, 4]] # select row 2,3 and cols 0,4
+df.iloc[3:6, [1, 4]] # from to range in rows
+df.iloc[2:5, 2:5] # from to range in rows and cols
+df.iloc[0, 2] # select single row and col
+df.iloc[:, 5] # select all rows of a col</pre>
+
+</div>
+
+<h4 id="iterating_over_2d_df">Iterating over 2d df</h4>
+<div class="level4">
+<pre class="code">for i in range(df.shape[0]):  #iterate over rows
+  for j in range(df.shape[1]): # iterate over cols
+    feature_a = df.iloc[i,j]</pre>
+
+</div>
+
+<h4 id="compare_all_features_with_each_other">compare all features with each other</h4>
+<div class="level4">
+<pre class="code">for i in range(df.shape[1]):
+  for j in range(i + 1, df.shape[1]):
+    feature_a = df.iloc[:,i]
+    feature_b = df.iloc[:,j]</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;iloc&quot;,&quot;hid&quot;:&quot;iloc&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;950-1833&quot;} -->
+<h2 class="sectionedit5" id="manipulate_dataframe">Manipulate dataframe</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="add_col_to_df">add col to df</h4>
+<div class="level4">
+<pre class="code">df = pd.DataFrame([1,2,3,4], columns=[&#039;col_name&#039;]) # initialise
+df = df.assign(Country=&#039;XX&#039;, City=&#039;YY&#039;) # adding Column Country and City to each row with the content &quot;XX&quot; in Country and &quot;YY&quot; in City</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Manipulate dataframe&quot;,&quot;hid&quot;:&quot;manipulate_dataframe&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1834-&quot;} -->

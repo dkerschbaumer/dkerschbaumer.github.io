@@ -1,0 +1,21 @@
+====== Allgemeine Rechengesetze ======
+
+===== Wurzelgesetze =====
+{{::wurzelgesetze.png?600|}}
+
+
+===== Bruchgesetze =====
+{{:bruchgesetze.png?600|}}
+
+
+===== Potenzgesetze =====
+{{:potenzgesetze.png?600|}}
+
+===== Loggesetze =====
+{{:loggesetze.png?600|}}
+
+===== Differenzieren =====
+{{:differenzieren.png?600|}}
+
+===== Integrieren =====
+{{:integrieren.png?600|}}
